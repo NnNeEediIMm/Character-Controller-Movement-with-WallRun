@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*This is Character Controller Movement 
+by NnNeEediIMm with WallRuning*/
+
 public class CCMovement : MonoBehaviour
 {
     //movement
