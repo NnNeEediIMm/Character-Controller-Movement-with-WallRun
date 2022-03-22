@@ -5,9 +5,9 @@ using UnityEngine;
 /*This is Character Controller Movement 
 by NnNeEediIMm with WallRuning*/
 
-public class CCMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
-    //movement
+    // movement
     float x, z;
     Vector3 move;
     [Header("Movement")]
@@ -45,7 +45,7 @@ public class CCMovement : MonoBehaviour
     public KeyCode crouchInput = KeyCode.LeftShift;
     bool crouchingInputUp;
     float speedWhileCrouching;
-    static float defaultSize; 
+    static float defaultSize;
     float reducedSize;
 
     //sprinting
@@ -68,6 +68,7 @@ public class CCMovement : MonoBehaviour
     {
         GameObject check = new GameObject("Check");
         groundCheck = GameObject.Find("Check");
+        groundCheck.transform.parent = this.transform;
 
         control = GetComponent<CharacterController>();
 
@@ -76,7 +77,7 @@ public class CCMovement : MonoBehaviour
         speedWhileCrouching = moveSpeed / 2f;
         defaultSize = transform.localScale.y;
         reducedSize = transform.localScale.y / 2;
-        sprintSpeed = moveSpeed * 1.91f;
+        sprintSpeed = moveSpeed * 1.57f;
 
 
         /*for wallrun*/
@@ -142,8 +143,8 @@ public class CCMovement : MonoBehaviour
 
     }
 
-    public void jump() 
-    { 
+    public void jump()
+    {
         if (isGrounded && jumping)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravityScale);
@@ -171,7 +172,7 @@ public class CCMovement : MonoBehaviour
             }
         }
 
-    } 
+    }
 
     void notCrouching()
     {
