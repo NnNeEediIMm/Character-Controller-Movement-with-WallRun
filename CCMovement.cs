@@ -5,7 +5,7 @@ using UnityEngine;
 /*This is Character Controller Movement 
 by NnNeEediIMm with WallRuning*/
 
-public class Movement : MonoBehaviour
+public class CCMovement : MonoBehaviour
 {
     // movement
     float x, z;
